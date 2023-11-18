@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'MAPagerViewController_Example' do
+  pod 'MAPagerViewController', :path => '../'
+
+  target 'MAPagerViewController_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
