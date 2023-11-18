@@ -1,0 +1,16 @@
+PODS:
+  - MAPagerViewController (0.1.0)
+
+DEPENDENCIES:
+  - MAPagerViewController (from `../`)
+
+EXTERNAL SOURCES:
+  MAPagerViewController:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MAPagerViewController: 30b7dd9af3693e975284912a18d6bbbe4647ac0d
+
+PODFILE CHECKSUM: 60ceef5d4827d13f869e851eb9120084ef448bc2
+
+COCOAPODS: 1.14.2

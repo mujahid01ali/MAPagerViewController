@@ -1,9 +1,8 @@
 //
 //  ViewController.swift
-//  MAPagerViewController
+//  Pager
 //
-//  Created by mujahid01ali on 11/18/2023.
-//  Copyright (c) 2023 mujahid01ali. All rights reserved.
+//  Created by Mujahid Ali on 01/11/2023.
 //
 
 import UIKit
@@ -12,13 +11,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view.
+        view.backgroundColor = .secondaryLabel
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
 }
 

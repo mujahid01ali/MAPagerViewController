@@ -1,0 +1,6 @@
+framework module Pods_MAPagerViewController_Example {
+  umbrella header "Pods-MAPagerViewController_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
