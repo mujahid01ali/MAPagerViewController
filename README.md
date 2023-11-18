@@ -22,7 +22,7 @@ pod 'MAPagerViewController'
 
 ## Author
 
-mujahid01ali, mujahid@classplus.co
+mujahid01ali, magg2761@gmail.com
 
 ## License
 
