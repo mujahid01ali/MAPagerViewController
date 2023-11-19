@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MAPagerViewController'
-  s.version          = '1.0.1'
-  s.summary          = 'Pager-iOS is a top tab pager to scroll tabs/tap with screen.'
+  s.version          = '1.0.2'
+  s.summary          = 'MAPagerViewController is a top tab pager to scroll tabs/tap with screen.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-  'Pager-iOS is a  top tab pager for seamless navigation between different tabs. Boasting a user-friendly interface, it enables effortless tab scrolling and tapping, enhancing the overall user experience. This library empowers developers allowing users to effortlessly switch between different tabs.  Elevate your app navigation with Pager-iOS, simplifying tab interaction and elevating user satisfaction.'
+  'MAPagerViewController is a  top tab pager for seamless navigation between different tabs. Boasting a user-friendly interface, it enables effortless tab scrolling and tapping, enhancing the overall user experience. This library empowers developers allowing users to effortlessly switch between different tabs.  Elevate your app navigation with Pager-iOS, simplifying tab interaction and elevating user satisfaction.'
                        DESC
 
   s.homepage         = 'https://github.com/mujahid01ali/MAPagerViewController'
