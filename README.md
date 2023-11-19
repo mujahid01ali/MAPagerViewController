@@ -26,27 +26,31 @@ MAPagerViewController is a versatile top tab pager designed for seamless navigat
 
 ```swift
 
- override func viewDidLoad() {
-  super.viewDidLoad()
-  setPager()
-}
+    lazy var pagerView: MAPagerView = {
+        let view = MAPagerView()
+        return MAPagerView()
+    }()
+    
+    var tabs: [MATab] {
+        return [
+            MATab(icon: UIImage(systemName: "cricket.ball.fill"), title: "Music", screen: ViewController(), isSelected: true),
+            MATab(title: "Entertainment", screen: ViewController2()),
+            MATab(title: "World News", screen: ViewController3())
+        ]
+    }
 
-var getTabs: [Tab] {
-    return [
-        Tab(title: "Music", screen: ViewController(), isSelected: true),
-        Tab(title: "Entertainment", screen: ViewController2(), isSelected: false),
-        Tab(title: "World News", screen: ViewController3(), isSelected: false)
-    ]
-}
-
-
-private func setPager() {
-    pagerView.configuration = PagerConfiguration(tabs: getTabs)
-    self.addChild(pagerView)
-    view.addSubview(pagerView.view)
-    pagerView.view.frame = view.bounds
-    pagerView.didMove(toParent: self)
-}
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        setPager()
+    }
+    
+    private func setPager() {
+        pagerView.configuration = PagerConfiguration(tabs: tabs)
+        pagerView.callingViewControllers = self
+        pagerView.setChildViews()
+ 
+    }
 ```
 <img src="https://github.com/mujahid01ali/MAPagerViewController/assets/12751356/1078247c-8b7e-47ab-9aa3-000eaf5b6891" width="200" height="400">
 
@@ -54,16 +58,16 @@ private func setPager() {
 <br/>
 
 **- Adding Borders and Colors:**  
-To apply a border with color to tabs in a ```pagerView```, you can achieve this by adding the following configuration(```TabConfiguration```) within the specified ```pagerView```.
+To apply a border with color to tabs in a *```pagerView```*, you can achieve this by adding the following configuration(*```TabConfiguration```*) within the specified *```pagerView```*.
 
 ```swift
-let tabConfig = TabConfiguration(borderRadius: 8.0,
-                                         borderWidth: 1.5,
-                                         font: .systemFont(ofSize: 16, weight: .bold),
-                                         selectedCellBorderColor: .brown,
-                                         bottomIndicatorColor: .brown)
- pagerView.configuration = PagerConfiguration(tabs: getTabs,
-                                                    tabConfig: tabConfig)
+let tabConfig = MATabConfiguration(borderRadius: 8.0,
+                                           borderWidth: 1.5,
+                                           font: .systemFont(ofSize: 16, weight: .bold),
+                                           selectedCellBorderColor: .brown,
+                                           bottomIndicatorColor: .brown)
+pagerView.configuration = PagerConfiguration(tabs: tabs,
+                                                     tabConfig: tabConfig)
 ```
 
 <img src="https://github.com/mujahid01ali/MAPagerViewController/assets/12751356/407bfc28-af68-4069-a357-2336fb78c1b6" width="200" height="400">
@@ -73,25 +77,25 @@ let tabConfig = TabConfiguration(borderRadius: 8.0,
 <br/>
 
 **- Adding Icons to Tabs:**  
-  To include icons for the tabs, utilize the ```icon``` parameter within the ```Tab``` model.
+  To include icons for the tabs, utilize the *```icon```* parameter within the *```Tab```* model.
 
 ```swift
-Tab(icon: UIImage(systemName: "cricket.ball.fill"), title: "Music", screen: ViewController(), isSelected: true)
+MATab(icon: UIImage(systemName: "cricket.ball.fill"), title: "Music", screen: ViewController(), isSelected: true)
 
 ```
 
 <img src="https://github.com/mujahid01ali/MAPagerViewController/assets/12751356/10dfa05e-7ccd-475e-8258-4a48f1117f35" width="200" height="400">
 
 **- Customizing Tab States:**  
-  You can further enhance the appearance of your tabs by customizing their states. The following properties in ```TabConfiguration``` and ```PagerConfiguration``` provides extensive customization options:
+  You can further enhance the appearance of your tabs by customizing their states. The following properties in *```TabConfiguration```* and *```PagerConfiguration```* provides extensive customization options:
 
-  - `selectedTabBackgroundColor`: Set the background color of the selected tab.
-  - `selectedTextColor`: Define the text color of the selected tab.
-  - `selectedTintColor`: Specify the tint color of the selected tab.
-  - `bottomIndicatorColor`: Set the color of the bottom indicator that highlights the selected tab.
-  - `font`: Customize the text font color for all tabs.
-  - `pagerBackgroundColor`: Set the pager background color.
-  - `isScrollingEnable`: Define the controller are scrollable.
+  - *`selectedTabBackgroundColor`*: Set the background color of the selected tab.
+  - *`selectedTextColor`*: Define the text color of the selected tab.
+  - *`selectedTintColor`*: Specify the tint color of the selected tab.
+  - *`bottomIndicatorColor`*: Set the color of the bottom indicator that highlights the selected tab.
+  - *`font`*: Customize the text font color for all tabs.
+  - *`pagerBackgroundColor`*: Set the pager background color.
+  - *`isScrollingEnable`*: Define the controller are scrollable.
   
   <br />
   Feel free to experiment with these properties to achieve the desired look and feel for your tabs.
